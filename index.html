@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+    <title>SVG map</title>
+    <style>
+        div {
+            border:4px solid black;
+            margin: 0 auto;
+            width: 90%;
+            display: block;
+            background-image: url("sheridan.jpg");
+            background-size: cover;
+        }
+        
+        svg {
+            opacity: 0.7;
+        }
+        
+        #green {
+            fill: #44BC33
+        }
+        
+        #blue {
+            fill:#4D33BC;
+        }
+        
+        #red {
+            fill:#BF3243
+        }
+        
+        #green:hover, #blue:hover, #red:hover {
+            opacity: 1;
+            fill: gold;
+        }
+        
+        #result {
+            text-align: center;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div id="map">
+        
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 289 193" style="enable-background:new 0 0 289 193;" xml:space="preserve">
+        <path id="blue" class="st0" d="M98,60.7L159,49c0,0,22.7,8.3,25.7,8L138,77C138,77,97,66.3,98,60.7z"/>
+        <path id="green" class="st1" d="M174,96.5l57.7-21.2c0,0,32.3,22,29,39.3l-76,4.7C184.7,119.3,187,113.3,174,96.5z"/>
+        <path id="red" class="st2" d="M137.3,25.3L152,31c0,0,31-9.3,45.3,12.3h10L203.7,30C203.7,30,165,22,137.3,25.3z"/>
+        </svg>
+
+    </div>
+    <p id="result"></p>
+	<script>
+        var green = document.getElementById("green");
+        var red = document.getElementById("red");
+        var blue = document.getElementById("blue");
+        var result = document.getElementById("result");
+        
+        function getGreen() {
+            console.log("green");
+            result.innerHTML = "Green";
+            result.style.color = "#44BC33"
+        }
+        
+        function getRed() {
+            console.log("red");
+            result.innerHTML = "Red";
+            result.style.color = "#BF3243"
+        }
+        
+        function getBlue() {
+            console.log("blue");
+            result.innerHTML = "Blue";
+            result.style.color = "#4D33BC"
+        }
+        green.addEventListener("click", getGreen);
+        red.addEventListener("click", getRed);
+        blue.addEventListener("click", getBlue);
+    </script>	
+</body>
+</html>
